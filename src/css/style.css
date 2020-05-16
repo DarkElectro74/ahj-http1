@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.header {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+#add-ticket {
+  width: 250px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 550px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+#add-ticket:hover {
+  border: 1px solid rgb(70, 180, 107);
+  background-color: rgb(70, 180, 107);
+}
+
+#tickets {
+  border: 1px solid black;
+}
+
+.ticket {
+  border-bottom: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ticket:last-child {
+  border-bottom: none;
+}
+
+.status {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+[data-status=false]::after {
+  background-color: #ffffff;
+}
+
+[data-status=true]::after{
+  background-color: rgb(70, 180, 107);
+}
+
+.description {
+  width: 100%;
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+.description p {
+  font-size: 18px;
+}
+
+.ticket-name {
+  width: 60%;
+  cursor: pointer;
+}
+
+.editor {
+  margin-left: auto;
+}
+
+.pointer {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  background-size: cover;
+  position: relative;
+}
+
+.pointer:nth-child(n+2) {  
+  margin-left: 15px;
+}
+
+.pointer::after {
+  content: '';
+  border: 1px solid;
+  border-radius: 25px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+.edit-ticket {
+  background-image: url('../img/pencil.png');
+  opacity: 0.3;
+}
+
+.edit-ticket:hover {
+  opacity: 1;
+}
+
+.delete-ticket {
+  background-image: url('../img/delete.png');
+  opacity: 0.3;
+}
+
+.delete-ticket:hover {
+  opacity: 1;
+}
+
+#close, #close-delete {
+  background-image: url('../img/close-default.png');
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  float: right;
+  cursor: pointer;
+}
+
+#close:hover, #close-delete:hover {
+  background-image: url('../img/close.png');
+}
+
+.popup {
+  width: 400px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 20px;
+  position: fixed;
+  background-color: #ffffff;
+}
+
+.popup p {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#title-popup {
+  text-align: center;
+  padding: 0;
+  font-size: 22px;
+}
+
+.text-popup {
+  text-align: center;
+}
+
+.input {
+  border: 1px solid #000000;
+  height: 50px;
+  padding: 10px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  width: 110px;
+  height: 35px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button:first-child {
+  margin-right: 10px;
+}
+
+.save:hover, .delete:hover {
+  background-color: rgb(70, 180, 107);
+  border: 1px solid rgb(70, 180, 107);
+}
+
+.cancel {
+  background-color: #e2e2e2;
+  border: 1px solid #e2e2e2
+}
+
+.cancel:hover {
+  background-color: #cacaca;
+  border: 1px solid #cacaca;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  position: absolute;
+  border: 1px solid darkred;
+  color: darkred;
+  background-color: rgb(255, 195, 195);
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.error::before, .error::after {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom: 10px solid black;
+  top: -20px;
+  left: calc(50% - 10px);
+}
+
+.error::after {
+  content: '';
+  border-bottom: 10px solid rgb(255, 195, 195);
+  top: -19px;
+}
